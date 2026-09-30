@@ -265,6 +265,16 @@ int main(void) {
             tempoMensagem = 2.0f;
         }
 
+        if (IsKeyPressed(KEY_DELETE)) {
+            if (remove(ARQUIVO_SAVE) == 0) {
+                TextCopy(mensagem, "Save apagado!");
+            } else {
+                TextCopy(mensagem, "Nenhum save encontrado!");
+            }
+
+            tempoMensagem = 2.0f;
+        }
+
         if (tempoMensagem > 0.0f) tempoMensagem -= GetFrameTime();
 
         BeginDrawing();
